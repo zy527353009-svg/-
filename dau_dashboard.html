@@ -246,7 +246,7 @@
     <div class="container">
         <header>
             <h1>丰巢线圈 DAU 统计看板</h1>
-            <p>数据周期:2026-04-21 至 2026-04-29&nbsp;&nbsp;·&nbsp;&nbsp; 生成时间:2026-04-30 16:08</p>
+            <p>数据周期:2026-04-21 至 2026-04-29&nbsp;&nbsp;·&nbsp;&nbsp; 生成时间:2026-04-30 16:16</p>
         </header>
 
         <div class="dashboard">
@@ -339,8 +339,8 @@
                 <div class="analysis-item warning">
                     <div class="title">异常设备需关注</div>
                     <div class="content">
-                        近 7 天 0dau 设备 <strong>362 台</strong>(占比 1.5%),
-                        近 3 天 0dau 设备 <strong>628 台</strong>(占比 2.6%)。
+                        近 7 天 0dau 设备 <strong>362 台</strong>(占比 {DAU_0_7D_PCT}%),
+                        近 3 天 0dau 设备 <strong>628 台</strong>(占比 {DAU_0_3D_PCT}%)。
                         近 3 天异常设备数接近近 7 天的 2 倍，说明 <strong>部分设备近期才开始不活跃</strong>,
                         建议追踪这批设备的状态变化，排查故障或 offline 原因。
                     </div>
@@ -560,7 +560,7 @@
         </div>
 
         <footer>
-            数据来源：丰巢线圈 DAU 报表&nbsp;&nbsp;·&nbsp;&nbsp; 生成时间:2026-04-30 16:08
+            数据来源：丰巢线圈 DAU 报表&nbsp;&nbsp;·&nbsp;&nbsp; 生成时间:2026-04-30 16:16
         </footer>
     </div>
 
@@ -662,7 +662,7 @@
         new Chart(statusCtx, {
             type: 'doughnut',
             data: {
-                labels: ['dau≥3 设备', '0<dau<3 设备', '当日 0dau', '近 3 天 0dau', '近 7 天 0dau'],
+                labels: ['dau≥3 设备 (活跃)', '0<dau<3 设备 (轻度)', '当日 0dau (不活跃)'],
                 datasets: [{
                     data: [15,875, 6,498, 2,103, 628, 362],
                     backgroundColor: ['#52C41A', '#1677FF', '#FFC53D', '#FF7875', '#FF4D4F'],
