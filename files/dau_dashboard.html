@@ -71,7 +71,7 @@
             <div class="card">
                 <div class="card-title">活跃分布</div>
                 <div class="metric-row"><span class="value blue">15,875</span><span class="label">dau≥3 设备数</span></div>
-                <div class="metric-row"><span class="value">6,498</span><span class="label">0<dau<3 设备数</span></div>
+                <div class="metric-row"><span class="value">6,498</span><span class="label">0&lt;dau&lt;3 设备数</span></div>
             </div>
         </div>
         <div class="section" style="background:#F9FAFB;border:1px solid #E5E7EB;">
@@ -82,7 +82,7 @@
                 <div class="definition-item"><div class="term">dau≥3 设备数</div><div style="font-size:12px;color:#6B7280;">当日 dau 值≥3 的设备数量，定义为活跃设备。dau 为设备当日的活跃次数或使用频次。</div></div>
                 <div class="definition-item"><div class="term">0dau 设备数</div><div style="font-size:12px;color:#6B7280;">指定周期内 dau 始终为 0 的设备数量。包括：当日 0dau、近 3 天 0dau、近 7 天 0dau 三种口径。</div></div>
                 <div class="definition-item"><div class="term">近 N 天 0dau</div><div style="font-size:12px;color:#6B7280;">从最新日期向前推 N 天内，所有日期 dau 均为 0 的设备数。反映持续不活跃的设备情况。</div></div>
-                <div class="definition-item"><div class="term">0<dau<3 设备数</div><div style="font-size:12px;color:#6B7280;">当日 dau 值为 1 或 2 的设备数量，属于轻度活跃设备。</div></div>
+                <div class="definition-item"><div class="term">0&lt;dau&lt;3 设备数</div><div style="font-size:12px;color:#6B7280;">当日 dau 值为 1 或 2 的设备数量，属于轻度活跃设备。</div></div>
             </div>
         </div>
         <div class="section">
@@ -90,7 +90,7 @@
             <div class="analysis-grid">
                 <div class="analysis-item" style="border-left:3px solid var(--success);"><div class="title">整体趋势稳定</div><div class="content">9 天 DAU 均值 <strong>90,318</strong>，波动范围 84,621~95,183。2026-04-27 达到峰值 95,183，25-26 日略有回落 (周中波动)。</div></div>
                 <div class="analysis-item" style="border-left:3px solid var(--warning);"><div class="title">异常设备需关注</div><div class="content">近 7 天 0dau 设备 <strong>362 台</strong>(占比 1.5%)，近 3 天 0dau 设备 <strong>628 台</strong>(占比 2.6%)。近 3 天异常设备数接近近 7 天的 2 倍，说明<strong>部分设备近期才开始不活跃</strong>。</div></div>
-                <div class="analysis-item" style="border-left:3px solid var(--alipay-blue);"><div class="title">活跃度结构分析</div><div class="content">dau≥3 的设备 <strong>15,875 台</strong>(占比 64.9%)，0<dau<3 的设备 <strong>6,498 台</strong>(占比 26.5%)，dau=0 的设备 <strong>2,103 台</strong>(占比 8.6%)。整体呈健康分布。</div></div>
+                <div class="analysis-item" style="border-left:3px solid var(--alipay-blue);"><div class="title">活跃度结构分析</div><div class="content">dau≥3 的设备 <strong>15,875 台</strong>(占比 64.9%)，0&lt;dau&lt;3 的设备 <strong>6,498 台</strong>(占比 26.5%)，dau=0 的设备 <strong>2,103 台</strong>(占比 8.6%)。整体呈健康分布。</div></div>
                 <div class="analysis-item" style="border-left:3px solid var(--alipay-blue);"><div class="title">设备规模稳定</div><div class="content">每日设备数稳定在 <strong>24,461~24,472</strong> 之间，波动幅度<0.05%，无大规模新增或流失。</div></div>
             </div>
         </div>
@@ -194,7 +194,7 @@
         new Chart(document.getElementById('pieChart'), {
             type: 'doughnut',
             data: {
-                labels: ['dau≥3 设备 (活跃)', '0<dau<3 设备 (轻度)', '当日 0dau (不活跃)'],
+                labels: ['dau≥3 设备 (活跃)', '0&lt;dau&lt;3 设备 (轻度)', '当日 0dau (不活跃)'],
                 datasets: [{
                     data: [15875, 6498, 2103],
                     backgroundColor: ['#52C41A', '#1677FF', '#FFC53D'],
