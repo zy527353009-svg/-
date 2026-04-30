@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>丰巢线圈 DAU 统计看板</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+        :root { --alipay-blue: #1677FF; --success: #52C41A; --warning: #FAAD14; --danger: #FF4D4F; }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: -apple-system, BlinkMacSystemFont, 'PingFang SC', Arial, sans-serif; background: #F2F4F7; line-height: 1.6; }
+        .container { max-width: 1400px; margin: 0 auto; padding: 24px; }
+        header { background: linear-gradient(135deg, var(--alipay-blue) 0%, #0958D9 100%); color: white; padding: 28px 32px; border-radius: 12px; margin-bottom: 24px; }
+        header h1 { font-size: 24px; font-weight: 600; margin-bottom: 8px; }
+        header p { font-size: 13px; opacity: 0.85; }
+        .dashboard { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; margin-bottom: 24px; }
+        .card { background: white; border-radius: 12px; padding: 24px; box-shadow: 0 1px 2px rgba(0,0,0,0.04), 0 4px 12px rgba(0,0,0,0.06); }
+        .card-title { font-size: 14px; color: #8590A3; margin-bottom: 12px; }
+        .metric-value { font-size: 32px; font-weight: 600; color: var(--alipay-blue); }
+        .metric-value.success { color: var(--success); }
+        .metric-value.danger { color: var(--danger); }
+        .metric-row { display: flex; align-items: baseline; gap: 8px; padding: 4px 0; }
+        .metric-row .value { font-size: 20px; font-weight: 600; min-width: 65px; }
+        .metric-row .value.blue { color: var(--alipay-blue); }
+        .metric-row .value.danger { color: var(--danger); }
+        .metric-row .label { font-size: 13px; color: #8590A3; }
+        .section { background: white; border-radius: 12px; padding: 24px; margin-bottom: 24px; box-shadow: 0 1px 2px rgba(0,0,0,0.04), 0 4px 12px rgba(0,0,0,0.06); }
+        .section-title { font-size: 16px; font-weight: 600; margin-bottom: 20px; padding-bottom: 16px; border-bottom: 1px solid #F0F2F5; }
+        .section-title::before { content: ''; width: 4px; height: 16px; background: var(--alipay-blue); border-radius: 2px; margin-right: 8px; display: inline-block; }
+        .chart-grid { display: grid; grid-template-columns: 2fr 1fr; gap: 16px; }
+        .chart-wrapper { position: relative; height: 300px; }
+        table { width: 100%; border-collapse: collapse; font-size: 14px; }
+        th { background: #FAFBFC; color: #8590A3; padding: 12px 16px; text-align: left; font-size: 12px; }
+        td { padding: 14px 16px; border-bottom: 1px solid #F2F4F7; }
+        tr:hover td { background: #FAFBFC; }
+        .badge { padding: 4px 12px; border-radius: 4px; font-size: 12px; font-weight: 500; }
+        .badge.success { background: #F6FFED; color: var(--success); }
+        .badge.warning { background: #FFF7E6; color: var(--warning); }
+        .definition-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+        .definition-item { padding: 12px; background: white; border-radius: 8px; border: 1px solid #E5E7EB; }
+        .definition-item .term { font-size: 13px; font-weight: 600; color: var(--alipay-blue); margin-bottom: 6px; }
+        .analysis-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px; }
+        .analysis-item { padding: 16px; background: #F9FAFB; border-radius: 8px; }
+        .analysis-item .title { font-size: 13px; font-weight: 600; margin-bottom: 8px; }
+        .analysis-item .content { font-size: 13px; color: #6B7280; line-height: 1.6; }
+        footer { text-align: center; padding: 24px; color: #8590A3; font-size: 12px; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>丰巢线圈 DAU 统计看板</h1>
+            <p>数据周期:2026-04-21 至 2026-04-29&nbsp;&nbsp;·&nbsp;&nbsp; 生成时间:2026-04-30 17:09</p>
+        </header>
+        <div class="dashboard">
+            <div class="card">
+                <div class="card-title">总设备数</div>
+                <div class="metric-value">24,476</div>
+                <div style="font-size:13px;color:#6B7280;margin-top:8px;">唯一 SN 总数</div>
+            </div>
+            <div class="card">
+                <div class="card-title">最新 DAU</div>
+                <div class="metric-value success">91,009</div>
+                <div style="font-size:13px;color:#6B7280;margin-top:8px;">2026-04-29 · dau≥3 设备：15,875 台</div>
+            </div>
+            <div class="card">
+                <div class="card-title">异常监控</div>
+                <div class="metric-row"><span class="value danger">362</span><span class="label">近 7 天 0dau 设备数</span></div>
+                <div class="metric-row"><span class="value danger">628</span><span class="label">近 3 天 0dau 设备数</span></div>
+                <div class="metric-row"><span class="value danger">2,103</span><span class="label">当日 0dau 设备数</span></div>
+            </div>
+            <div class="card">
+                <div class="card-title">活跃分布</div>
+                <div class="metric-row"><span class="value blue">15,875</span><span class="label">dau≥3 设备数</span></div>
+                <div class="metric-row"><span class="value">6,498</span><span class="label">0<dau<3 设备数</span></div>
+            </div>
+        </div>
+        <div class="section" style="background:#F9FAFB;border:1px solid #E5E7EB;">
+            <h3 style="font-size:14px;margin-bottom:12px;">📖 数据口径说明</h3>
+            <div class="definition-grid">
+                <div class="definition-item"><div class="term">总设备数</div><div style="font-size:12px;color:#6B7280;">统计周期内出现过的唯一 SN 数量，排除 SN="all"汇总行后的去重计数。</div></div>
+                <div class="definition-item"><div class="term">DAU</div><div style="font-size:12px;color:#6B7280;">当日所有设备的 dau 值总和，取自表格中 SN="all"行的 dau 列数值。</div></div>
+                <div class="definition-item"><div class="term">dau≥3 设备数</div><div style="font-size:12px;color:#6B7280;">当日 dau 值≥3 的设备数量，定义为活跃设备。dau 为设备当日的活跃次数或使用频次。</div></div>
+                <div class="definition-item"><div class="term">0dau 设备数</div><div style="font-size:12px;color:#6B7280;">指定周期内 dau 始终为 0 的设备数量。包括：当日 0dau、近 3 天 0dau、近 7 天 0dau 三种口径。</div></div>
+                <div class="definition-item"><div class="term">近 N 天 0dau</div><div style="font-size:12px;color:#6B7280;">从最新日期向前推 N 天内，所有日期 dau 均为 0 的设备数。反映持续不活跃的设备情况。</div></div>
+                <div class="definition-item"><div class="term">0<dau<3 设备数</div><div style="font-size:12px;color:#6B7280;">当日 dau 值为 1 或 2 的设备数量，属于轻度活跃设备。</div></div>
+            </div>
+        </div>
+        <div class="section">
+            <h3 class="section-title">📊 数据分析洞察</h3>
+            <div class="analysis-grid">
+                <div class="analysis-item" style="border-left:3px solid var(--success);"><div class="title">整体趋势稳定</div><div class="content">9 天 DAU 均值 <strong>90,318</strong>，波动范围 84,621~95,183。2026-04-27 达到峰值 95,183，25-26 日略有回落 (周中波动)。</div></div>
+                <div class="analysis-item" style="border-left:3px solid var(--warning);"><div class="title">异常设备需关注</div><div class="content">近 7 天 0dau 设备 <strong>362 台</strong>(占比 1.5%)，近 3 天 0dau 设备 <strong>628 台</strong>(占比 2.6%)。近 3 天异常设备数接近近 7 天的 2 倍，说明<strong>部分设备近期才开始不活跃</strong>。</div></div>
+                <div class="analysis-item" style="border-left:3px solid var(--alipay-blue);"><div class="title">活跃度结构分析</div><div class="content">dau≥3 的设备 <strong>15,875 台</strong>(占比 64.9%)，0<dau<3 的设备 <strong>6,498 台</strong>(占比 26.5%)，dau=0 的设备 <strong>2,103 台</strong>(占比 8.6%)。整体呈健康分布。</div></div>
+                <div class="analysis-item" style="border-left:3px solid var(--alipay-blue);"><div class="title">设备规模稳定</div><div class="content">每日设备数稳定在 <strong>24,461~24,472</strong> 之间，波动幅度<0.05%，无大规模新增或流失。</div></div>
+            </div>
+        </div>
+        <div class="chart-grid">
+            <div class="section">
+                <h3 class="section-title">每日 DAU 趋势</h3>
+                <div class="chart-wrapper"><canvas id="dauChart"></canvas></div>
+            </div>
+            <div class="section">
+                <h3 class="section-title">设备状态分布 (2026-04-29)</h3>
+                <div class="chart-wrapper"><canvas id="pieChart"></canvas></div>
+            </div>
+        </div>
+        <div class="section">
+            <h3 class="section-title">每日设备数统计</h3>
+            <div class="chart-wrapper" style="height:260px;"><canvas id="deviceChart"></canvas></div>
+        </div>
+        <div class="section">
+            <h3 class="section-title">每日详细数据</h3>
+            <table>
+                <thead><tr><th>日期</th><th>设备数</th><th>DAU</th><th>dau≥3 设备数</th><th>0dau 设备数</th><th>状态</th></tr></thead>
+                <tbody>
+                    <tr><td>2026-04-21</td><td>24,466</td><td>89,397</td><td>15,706</td><td>2,134</td><td><span class="badge success">正常</span></td></tr>
+                    <tr><td>2026-04-22</td><td>24,461</td><td>92,737</td><td>16,123</td><td>2,033</td><td><span class="badge success">正常</span></td></tr>
+                    <tr><td>2026-04-23</td><td>24,462</td><td>92,511</td><td>15,993</td><td>2,063</td><td><span class="badge success">正常</span></td></tr>
+                    <tr><td>2026-04-24</td><td>24,463</td><td>92,277</td><td>16,083</td><td>2,024</td><td><span class="badge success">正常</span></td></tr>
+                    <tr><td>2026-04-25</td><td>24,464</td><td>84,621</td><td>14,919</td><td>2,474</td><td><span class="badge warning">偏低</span></td></tr>
+                    <tr><td>2026-04-26</td><td>24,466</td><td>85,402</td><td>14,870</td><td>2,552</td><td><span class="badge warning">偏低</span></td></tr>
+                    <tr><td>2026-04-27</td><td>24,467</td><td>95,183</td><td>16,305</td><td>1,965</td><td><span class="badge success">正常</span></td></tr>
+                    <tr><td>2026-04-28</td><td>24,470</td><td>88,658</td><td>15,498</td><td>2,209</td><td><span class="badge success">正常</span></td></tr>
+                    <tr><td>2026-04-29</td><td>24,472</td><td>91,009</td><td>15,875</td><td>2,103</td><td><span class="badge success">正常</span></td></tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="section">
+            <h3 class="section-title">🏆 当日 DAU Top10 设备 (2026-04-29)</h3>
+            <table>
+                <thead><tr><th style="width:80px;">排名</th><th>SN 序列号</th><th style="width:100px;">DAU</th></tr></thead>
+                <tbody>
+                    <tr><td><span class="badge" style="background:#FFD700;color:#333;">🥇 1</span></td><td style="font-family:monospace;font-size:13px;">MLN6DF10026032608751</td><td style="font-weight:600;color:var(--alipay-blue);">35</td></tr>
+                    <tr><td><span class="badge" style="background:#C0C0C0;color:#333;">🥈 2</span></td><td style="font-family:monospace;font-size:13px;">MLN6DF10026032614518</td><td style="font-weight:600;color:var(--alipay-blue);">31</td></tr>
+                    <tr><td><span class="badge" style="background:#CD7F32;color:#333;">🥉 3</span></td><td style="font-family:monospace;font-size:13px;">MLN6DF10026032706654</td><td style="font-weight:600;color:var(--alipay-blue);">30</td></tr>
+                    <tr><td><span class="badge" style="background:#F0F0F0;color:#333;">4</span></td><td style="font-family:monospace;font-size:13px;">MLN6DF10026032610739</td><td style="font-weight:600;color:var(--alipay-blue);">29</td></tr>
+                    <tr><td><span class="badge" style="background:#F0F0F0;color:#333;">5</span></td><td style="font-family:monospace;font-size:13px;">MLN6DF10026032604369</td><td style="font-weight:600;color:var(--alipay-blue);">27</td></tr>
+                    <tr><td><span class="badge" style="background:#F0F0F0;color:#333;">6</span></td><td style="font-family:monospace;font-size:13px;">MLN6DF11026032700427</td><td style="font-weight:600;color:var(--alipay-blue);">26</td></tr>
+                    <tr><td><span class="badge" style="background:#F0F0F0;color:#333;">7</span></td><td style="font-family:monospace;font-size:13px;">MLN6DF10026032611310</td><td style="font-weight:600;color:var(--alipay-blue);">26</td></tr>
+                    <tr><td><span class="badge" style="background:#F0F0F0;color:#333;">8</span></td><td style="font-family:monospace;font-size:13px;">MLN6DF10026032604394</td><td style="font-weight:600;color:var(--alipay-blue);">25</td></tr>
+                    <tr><td><span class="badge" style="background:#F0F0F0;color:#333;">9</span></td><td style="font-family:monospace;font-size:13px;">MLN6DF10026032611088</td><td style="font-weight:600;color:var(--alipay-blue);">25</td></tr>
+                    <tr><td><span class="badge" style="background:#F0F0F0;color:#333;">10</span></td><td style="font-family:monospace;font-size:13px;">MLN6DF10026032606550</td><td style="font-weight:600;color:var(--alipay-blue);">25</td></tr>
+                </tbody>
+            </table>
+        </div>
+        <footer>数据来源：丰巢线圈 DAU 报表 · 生成时间:2026-04-30 17:09</footer>
+    </div>
+    <script>
+        Chart.defaults.font.family = '-apple-system, BlinkMacSystemFont, "PingFang SC"';
+        Chart.defaults.color = '#8590A3';
+        new Chart(document.getElementById('dauChart'), {
+            type: 'line',
+            data: {
+                labels: ['04-21', '04-22', '04-23', '04-24', '04-25', '04-26', '04-27', '04-28', '04-29'],
+                datasets: [{
+                    label: 'DAU',
+                    data: [89397, 92737, 92511, 92277, 84621, 85402, 95183, 88658, 91009],
+                    borderColor: '#1677FF',
+                    backgroundColor: 'rgba(22, 119, 255, 0.1)',
+                    borderWidth: 2,
+                    fill: true,
+                    tension: 0.3
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: { legend: { display: false } },
+                scales: {
+                    x: { grid: { display: false } },
+                    y: { ticks: { callback: v => (v/10000).toFixed(0)+'万' } }
+                }
+            }
+        });
+        new Chart(document.getElementById('deviceChart'), {
+            type: 'bar',
+            data: {
+                labels: ['04-21', '04-22', '04-23', '04-24', '04-25', '04-26', '04-27', '04-28', '04-29'],
+                datasets: [{
+                    label: '设备数',
+                    data: [24466, 24461, 24462, 24463, 24464, 24466, 24467, 24470, 24472],
+                    backgroundColor: '#52C41A',
+                    borderRadius: 4,
+                    barThickness: 32
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: { legend: { display: false } },
+                scales: { x: { grid: { display: false } }, y: { grid: { color: '#F2F4F7' } } }
+            }
+        });
+        new Chart(document.getElementById('pieChart'), {
+            type: 'doughnut',
+            data: {
+                labels: ['dau≥3 设备 (活跃)', '0<dau<3 设备 (轻度)', '当日 0dau (不活跃)'],
+                datasets: [{
+                    data: [15875, 6498, 2103],
+                    backgroundColor: ['#52C41A', '#1677FF', '#FFC53D'],
+                    borderWidth: 0,
+                    cutout: '55%'
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: {
+                    legend: {
+                        position: 'bottom',
+                        labels: {
+                            font: { size: 12 },
+                            generateLabels: function(chart) {
+                                const data = chart.data;
+                                return data.labels.map((label, i) => {
+                                    const value = data.datasets[0].data[i];
+                                    const total = data.datasets[0].data.reduce((a,b) => a+b, 0);
+                                    const pct = ((value/total)*100).toFixed(1);
+                                    return { text: label+' '+pct+'%', fillStyle: data.datasets[0].backgroundColor[i] };
+                                });
+                            }
+                        }
+                    }
+                }
+            }
+        });
+    </script>
+</body>
+</html>
