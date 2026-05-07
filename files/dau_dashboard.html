@@ -502,6 +502,30 @@
             options: {
                 responsive: true,
                 maintainAspectRatio: false,
+                scales: {
+                    y: {
+                        min: 70000,
+                        max: 110000,
+                        ticks: {
+                            stepSize: 10000,
+                            callback: function(value) {
+                                return (value / 10000).toFixed(0) + '万';
+                            }
+                        },
+                        grid: {
+                            color: function(context) {
+                                if (context.tick.value % 20000 === 0) {
+                                    return 'rgba(0, 0, 0, 0.1)';
+                                }
+                                return 'rgba(0, 0, 0, 0.05)';
+                            }
+                        }
+                    },
+                    x: {
+                        grid: { display: false },
+                        border: { display: false }
+                    }
+                },
                 plugins: {
                     legend: { display: false },
                     tooltip: {
