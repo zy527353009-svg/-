@@ -246,7 +246,7 @@
     <div class="container">
         <header>
             <h1>丰巢线圈 DAU 统计看板</h1>
-            <p>数据周期:{PERIOD}&nbsp;&nbsp;·&nbsp;&nbsp; 生成时间:2026-05-07 14:53</p>
+            <p>数据周期:2026-04-21 ~ 2026-05-06&nbsp;&nbsp;·&nbsp;&nbsp; 生成时间:2026-05-07 14:56</p>
         </header>
 
         <div class="dashboard">
@@ -263,17 +263,17 @@
                 <div class="metric-main">
                     <div class="metric-value success">104,836</div>
                 </div>
-                <div class="metric-label">2026-05-06 &nbsp;&nbsp;·&nbsp;&nbsp; dau≥3 设备：111,244 台</div>
+                <div class="metric-label">2026-05-06 &nbsp;&nbsp;·&nbsp;&nbsp; dau≥3 设备：0 台</div>
             </div>
 
             <div class="card">
                 <div class="card-title">异常监控</div>
                 <div class="metric-row">
-                    <span class="value danger">{DAU_0_7D}</span>
+                    <span class="value danger">0</span>
                     <span class="label">近 7 天 0dau 设备数</span>
                 </div>
                 <div class="metric-row">
-                    <span class="value danger">{DAU_0_3D}</span>
+                    <span class="value danger">0</span>
                     <span class="label">近 3 天 0dau 设备数</span>
                 </div>
                 <div class="metric-row">
@@ -285,11 +285,11 @@
             <div class="card">
                 <div class="card-title">活跃分布</div>
                 <div class="metric-row">
-                    <span class="value blue">111,244</span>
+                    <span class="value blue">0</span>
                     <span class="label">dau ≥ 3 设备数</span>
                 </div>
                 <div class="metric-row">
-                    <span class="value">-88,560</span>
+                    <span class="value">22,684</span>
                     <span class="label">0&lt;dau&lt;3 设备数</span>
                 </div>
             </div>
@@ -320,7 +320,7 @@
                 </div>
                 <div class="definition-item">
                     <div class="term">活跃率</div>
-                    <div class="desc">活跃设备数 (dau≥3) / 总设备数 × 100%。最新日活跃率 = 454.4%。</div>
+                    <div class="desc">活跃设备数 (dau≥3) / 总设备数 × 100%。最新日活跃率 = 0.0%。</div>
                 </div>
             </div>
         </div>
@@ -331,16 +331,16 @@
                 <div class="analysis-item positive">
                     <div class="title">整体趋势稳定</div>
                     <div class="content">
-                        {DAY_COUNT} 天 DAU 均值 <strong>{AVG_DAU}</strong>，波动范围 71,660~104,836。
-                        {PEAK_DATE} 达到峰值 104,836，25-26 日略有回落 (周中波动)。
-                        最新日 2026-05-06 DAU 104,836，较峰值下降 {PEAK_DROP}%，属正常波动。
+                        16 天 DAU 均值 <strong>87,627</strong>，波动范围 89,397~104,836。
+                        2026-05-06 达到峰值 104,836，25-26 日略有回落 (周中波动)。
+                        最新日 2026-05-06 DAU 104,836，较峰值下降 33,176%，属正常波动。
                     </div>
                 </div>
                 <div class="analysis-item warning">
                     <div class="title">异常设备需关注</div>
                     <div class="content">
-                        近 7 天 0dau 设备 <strong>{DAU_0_7D} 台</strong>(占比 {DAU_0_7D_PCT}%),
-                        近 3 天 0dau 设备 <strong>{DAU_0_3D} 台</strong>(占比 {DAU_0_3D_PCT}%)。
+                        近 7 天 0dau 设备 <strong>0 台</strong>(占比 0.0%),
+                        近 3 天 0dau 设备 <strong>0 台</strong>(占比 0.0%)。
                         近 3 天异常设备数接近近 7 天的 2 倍，说明 <strong>部分设备近期才开始不活跃</strong>,
                         建议追踪这批设备的状态变化，排查故障或 offline 原因。
                     </div>
@@ -348,8 +348,8 @@
                 <div class="analysis-item info">
                     <div class="title">活跃度结构分析</div>
                     <div class="content">
-                        dau≥3 的设备 <strong>111,244 台</strong>(占比 454.4%),
-                        0&lt;dau&lt;3 的设备 <strong>-88,560 台</strong>(占比 {DAU_MID_PCT}%),
+                        dau≥3 的设备 <strong>0 台</strong>(占比 0.0%),
+                        0&lt;dau&lt;3 的设备 <strong>22,684 台</strong>(占比 92.7%),
                         dau=0 的设备 <strong>1,797 台</strong>(占比 7.3%)。
                         整体呈健康分布，活跃设备占比超 6 成。
                     </div>
@@ -357,9 +357,9 @@
                 <div class="analysis-item info">
                     <div class="title">设备规模稳定</div>
                     <div class="content">
-                        每日设备数稳定在 <strong>{MIN_DEVICES}~{MAX_DEVICES}</strong> 之间，
+                        每日设备数稳定在 <strong>24,470~24,480</strong> 之间，
                         波动幅度&lt;0.04%,说明设备基数非常稳定，
-                        无大规模新增或流失。总设备数 24,481 台为 {DAY_COUNT} 天去重后的唯一 SN 数。
+                        无大规模新增或流失。总设备数 24,481 台为 16 天去重后的唯一 SN 数。
                     </div>
                 </div>
             </div>
@@ -614,7 +614,7 @@
         </div>
 
         <footer>
-            数据来源：丰巢线圈 DAU 报表&nbsp;&nbsp;·&nbsp;&nbsp; 生成时间:2026-05-07 14:53
+            数据来源：丰巢线圈 DAU 报表&nbsp;&nbsp;·&nbsp;&nbsp; 生成时间:2026-05-07 14:56
         </footer>
     </div>
 
@@ -695,7 +695,7 @@
                 labels: '04-21', '04-22', '04-23', '04-24', '04-25', '04-26', '04-27', '04-28', '04-29', '04-30', '05-01', '05-02', '05-03', '05-04', '05-05', '05-06',
                 datasets: [{
                     label: '设备数',
-                    data: [{CHART_DEVICES}],
+                    data: [设备],
                     backgroundColor: '#52C41A',
                     borderRadius: 4,
                     barThickness: 32
@@ -718,7 +718,7 @@
             data: {
                 labels: ['dau≥3 设备', '0&lt;dau&lt;3 设备', '当日 0dau', '近 3 天 0dau', '近 7 天 0dau'],
                 datasets: [{
-                    data: [111,244, -88,560, 1,797, {DAU_0_3D}, {DAU_0_7D}],
+                    data: [0, 22,684, 1,797, 0, 0],
                     backgroundColor: ['#52C41A', '#1677FF', '#FFC53D', '#FF7875', '#FF4D4F'],
                     borderWidth: 0,
                     cutout: '55%',
