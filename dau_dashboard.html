@@ -525,9 +525,12 @@
                         border: { display: false }
                     },
                     y: {
+                        min: 70000,
+                        max: 110000,
                         grid: { color: '#F2F4F7', drawBorder: false },
                         border: { display: false },
                         ticks: {
+                            stepSize: 10000,
                             callback: function(value) {
                                 return (value / 10000).toFixed(0) + '万';
                             }
