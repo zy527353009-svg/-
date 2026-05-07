@@ -504,11 +504,18 @@
                 maintainAspectRatio: false,
                 scales: {
                     y: {
-                        beginAtZero: false
+                        min: 70000,
+                        max: 110000,
+                        ticks: {
+                            stepSize: 10000
+                        }
                     },
                     x: {
-                        grid: { display: false },
-                        border: { display: false }
+                        grid: {
+                            display: false
+                        }
+                    }
+                }
                     }
                 },
                 plugins: {
