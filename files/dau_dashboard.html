@@ -246,14 +246,14 @@
     <div class="container">
         <header>
             <h1>丰巢线圈 DAU 统计看板</h1>
-            <p>数据周期:2026-04-22 至 2026-05-07&nbsp;&nbsp;·&nbsp;&nbsp; 生成时间:2026-05-07 10:25</p>
+            <p>数据周期:{PERIOD}&nbsp;&nbsp;·&nbsp;&nbsp; 生成时间:2026-05-07 14:53</p>
         </header>
 
         <div class="dashboard">
             <div class="card">
                 <div class="card-title">总设备数</div>
                 <div class="metric-main">
-                    <div class="metric-value blue">24,480</div>
+                    <div class="metric-value blue">24,481</div>
                 </div>
                 <div class="metric-label">唯一 SN 总数</div>
             </div>
@@ -263,21 +263,21 @@
                 <div class="metric-main">
                     <div class="metric-value success">104,836</div>
                 </div>
-                <div class="metric-label">2026-05-06 &nbsp;&nbsp;·&nbsp;&nbsp; dau≥3 设备：17,240 台</div>
+                <div class="metric-label">2026-05-06 &nbsp;&nbsp;·&nbsp;&nbsp; dau≥3 设备：111,244 台</div>
             </div>
 
             <div class="card">
                 <div class="card-title">异常监控</div>
                 <div class="metric-row">
-                    <span class="value danger">269</span>
+                    <span class="value danger">{DAU_0_7D}</span>
                     <span class="label">近 7 天 0dau 设备数</span>
                 </div>
                 <div class="metric-row">
-                    <span class="value danger">538</span>
+                    <span class="value danger">{DAU_0_3D}</span>
                     <span class="label">近 3 天 0dau 设备数</span>
                 </div>
                 <div class="metric-row">
-                    <span class="value danger">1,796</span>
+                    <span class="value danger">1,797</span>
                     <span class="label">当日 0dau 设备数</span>
                 </div>
             </div>
@@ -285,11 +285,11 @@
             <div class="card">
                 <div class="card-title">活跃分布</div>
                 <div class="metric-row">
-                    <span class="value blue">17,240</span>
+                    <span class="value blue">111,244</span>
                     <span class="label">dau ≥ 3 设备数</span>
                 </div>
                 <div class="metric-row">
-                    <span class="value">5,444</span>
+                    <span class="value">-88,560</span>
                     <span class="label">0&lt;dau&lt;3 设备数</span>
                 </div>
             </div>
@@ -320,7 +320,7 @@
                 </div>
                 <div class="definition-item">
                     <div class="term">活跃率</div>
-                    <div class="desc">活跃设备数 (dau≥3) / 总设备数 × 100%。最新日活跃率 = 70.4%。</div>
+                    <div class="desc">活跃设备数 (dau≥3) / 总设备数 × 100%。最新日活跃率 = 454.4%。</div>
                 </div>
             </div>
         </div>
@@ -331,16 +331,16 @@
                 <div class="analysis-item positive">
                     <div class="title">整体趋势稳定</div>
                     <div class="content">
-                        16 天 DAU 均值 <strong>87,627</strong>，波动范围 71,660~104,836。
-                        2026-05-06 达到峰值 104,836，25-26 日略有回落 (周中波动)。
-                        最新日 2026-05-06 DAU 104,836，较峰值下降 0.0%，属正常波动。
+                        {DAY_COUNT} 天 DAU 均值 <strong>{AVG_DAU}</strong>，波动范围 71,660~104,836。
+                        {PEAK_DATE} 达到峰值 104,836，25-26 日略有回落 (周中波动)。
+                        最新日 2026-05-06 DAU 104,836，较峰值下降 {PEAK_DROP}%，属正常波动。
                     </div>
                 </div>
                 <div class="analysis-item warning">
                     <div class="title">异常设备需关注</div>
                     <div class="content">
-                        近 7 天 0dau 设备 <strong>269 台</strong>(占比 3.7%),
-                        近 3 天 0dau 设备 <strong>538 台</strong>(占比 7.3%)。
+                        近 7 天 0dau 设备 <strong>{DAU_0_7D} 台</strong>(占比 {DAU_0_7D_PCT}%),
+                        近 3 天 0dau 设备 <strong>{DAU_0_3D} 台</strong>(占比 {DAU_0_3D_PCT}%)。
                         近 3 天异常设备数接近近 7 天的 2 倍，说明 <strong>部分设备近期才开始不活跃</strong>,
                         建议追踪这批设备的状态变化，排查故障或 offline 原因。
                     </div>
@@ -348,9 +348,9 @@
                 <div class="analysis-item info">
                     <div class="title">活跃度结构分析</div>
                     <div class="content">
-                        dau≥3 的设备 <strong>17,240 台</strong>(占比 70.4%),
-                        0&lt;dau&lt;3 的设备 <strong>5,444 台</strong>(占比 22.2%),
-                        dau=0 的设备 <strong>1,796 台</strong>(占比 7.3%)。
+                        dau≥3 的设备 <strong>111,244 台</strong>(占比 454.4%),
+                        0&lt;dau&lt;3 的设备 <strong>-88,560 台</strong>(占比 {DAU_MID_PCT}%),
+                        dau=0 的设备 <strong>1,797 台</strong>(占比 7.3%)。
                         整体呈健康分布，活跃设备占比超 6 成。
                     </div>
                 </div>
@@ -359,7 +359,7 @@
                     <div class="content">
                         每日设备数稳定在 <strong>{MIN_DEVICES}~{MAX_DEVICES}</strong> 之间，
                         波动幅度&lt;0.04%,说明设备基数非常稳定，
-                        无大规模新增或流失。总设备数 24,480 台为 16 天去重后的唯一 SN 数。
+                        无大规模新增或流失。总设备数 24,481 台为 {DAY_COUNT} 天去重后的唯一 SN 数。
                     </div>
                 </div>
             </div>
@@ -411,56 +411,134 @@
                         </tr>
                     </thead>
                     <tbody>
-                    <tr>
-                        <td><span class="badge" style="background:#FFD700;color:#333;">🥇 1</span></td>
-                        <td style="font-family:monospace;font-size:13px;">MLN6DF10026032706654</td>
-                        <td style="font-weight:600;color:var(--alipay-blue);">34</td>
-                    </tr>
-                    <tr>
-                        <td><span class="badge" style="background:#C0C0C0;color:#333;">🥈 2</span></td>
-                        <td style="font-family:monospace;font-size:13px;">MLN6DF10026032608862</td>
-                        <td style="font-weight:600;color:var(--alipay-blue);">34</td>
-                    </tr>
-                    <tr>
-                        <td><span class="badge" style="background:#CD7F32;color:#333;">🥉 3</span></td>
-                        <td style="font-family:monospace;font-size:13px;">MLN6DF10026032614004</td>
-                        <td style="font-weight:600;color:var(--alipay-blue);">33</td>
-                    </tr>
-                    <tr>
-                        <td><span class="badge" style="background:#F0F0F0;color:#333;">4</span></td>
-                        <td style="font-family:monospace;font-size:13px;">MLN6DF11026032703228</td>
-                        <td style="font-weight:600;color:var(--alipay-blue);">32</td>
-                    </tr>
-                    <tr>
-                        <td><span class="badge" style="background:#F0F0F0;color:#333;">5</span></td>
-                        <td style="font-family:monospace;font-size:13px;">MLN6DF10026032611859</td>
-                        <td style="font-weight:600;color:var(--alipay-blue);">32</td>
-                    </tr>
-                    <tr>
-                        <td><span class="badge" style="background:#F0F0F0;color:#333;">6</span></td>
-                        <td style="font-family:monospace;font-size:13px;">MLN6DF10026032705619</td>
-                        <td style="font-weight:600;color:var(--alipay-blue);">30</td>
-                    </tr>
-                    <tr>
-                        <td><span class="badge" style="background:#F0F0F0;color:#333;">7</span></td>
-                        <td style="font-family:monospace;font-size:13px;">MLN6DF10026032604415</td>
-                        <td style="font-weight:600;color:var(--alipay-blue);">28</td>
-                    </tr>
-                    <tr>
-                        <td><span class="badge" style="background:#F0F0F0;color:#333;">8</span></td>
-                        <td style="font-family:monospace;font-size:13px;">MLN6DF10026032611033</td>
-                        <td style="font-weight:600;color:var(--alipay-blue);">27</td>
-                    </tr>
-                    <tr>
-                        <td><span class="badge" style="background:#F0F0F0;color:#333;">9</span></td>
-                        <td style="font-family:monospace;font-size:13px;">MLN6DF10026032613745</td>
-                        <td style="font-weight:600;color:var(--alipay-blue);">27</td>
-                    </tr>
-                    <tr>
-                        <td><span class="badge" style="background:#F0F0F0;color:#333;">10</span></td>
-                        <td style="font-family:monospace;font-size:13px;">MLN6DF11026032702361</td>
-                        <td style="font-weight:600;color:var(--alipay-blue);">27</td>
-                    </tr>
+        <tr>
+            <td>2026-05-06</td>
+            <td>24,480</td>
+            <td>104,836</td>
+            <td>17,240</td>
+            <td>1,796</td>
+            <td><span class="badge success">正常</span></td>
+        </tr>
+        <tr>
+            <td>2026-05-05</td>
+            <td>24,480</td>
+            <td>90,944</td>
+            <td>15,819</td>
+            <td>2,316</td>
+            <td><span class="badge success">正常</span></td>
+        </tr>
+        <tr>
+            <td>2026-05-04</td>
+            <td>24,480</td>
+            <td>81,759</td>
+            <td>14,700</td>
+            <td>2,671</td>
+            <td><span class="badge warning">偏低</span></td>
+        </tr>
+        <tr>
+            <td>2026-05-03</td>
+            <td>24,480</td>
+            <td>73,516</td>
+            <td>13,509</td>
+            <td>3,155</td>
+            <td><span class="badge warning">偏低</span></td>
+        </tr>
+        <tr>
+            <td>2026-05-02</td>
+            <td>24,480</td>
+            <td>71,660</td>
+            <td>13,276</td>
+            <td>3,257</td>
+            <td><span class="badge warning">偏低</span></td>
+        </tr>
+        <tr>
+            <td>2026-05-01</td>
+            <td>24,480</td>
+            <td>75,880</td>
+            <td>13,796</td>
+            <td>2,998</td>
+            <td><span class="badge warning">偏低</span></td>
+        </tr>
+        <tr>
+            <td>2026-04-30</td>
+            <td>24,475</td>
+            <td>91,651</td>
+            <td>16,092</td>
+            <td>1,975</td>
+            <td><span class="badge success">正常</span></td>
+        </tr>
+        <tr>
+            <td>2026-04-29</td>
+            <td>24,472</td>
+            <td>91,009</td>
+            <td>15,875</td>
+            <td>2,099</td>
+            <td><span class="badge success">正常</span></td>
+        </tr>
+        <tr>
+            <td>2026-04-28</td>
+            <td>24,470</td>
+            <td>88,658</td>
+            <td>15,498</td>
+            <td>2,208</td>
+            <td><span class="badge success">正常</span></td>
+        </tr>
+        <tr>
+            <td>2026-04-27</td>
+            <td>24,467</td>
+            <td>95,183</td>
+            <td>16,305</td>
+            <td>1,964</td>
+            <td><span class="badge success">正常</span></td>
+        </tr>
+        <tr>
+            <td>2026-04-26</td>
+            <td>24,466</td>
+            <td>85,402</td>
+            <td>14,870</td>
+            <td>2,551</td>
+            <td><span class="badge success">正常</span></td>
+        </tr>
+        <tr>
+            <td>2026-04-25</td>
+            <td>24,464</td>
+            <td>84,621</td>
+            <td>14,919</td>
+            <td>2,473</td>
+            <td><span class="badge warning">偏低</span></td>
+        </tr>
+        <tr>
+            <td>2026-04-24</td>
+            <td>24,463</td>
+            <td>92,277</td>
+            <td>16,083</td>
+            <td>2,023</td>
+            <td><span class="badge success">正常</span></td>
+        </tr>
+        <tr>
+            <td>2026-04-23</td>
+            <td>24,462</td>
+            <td>92,511</td>
+            <td>15,993</td>
+            <td>2,062</td>
+            <td><span class="badge success">正常</span></td>
+        </tr>
+        <tr>
+            <td>2026-04-22</td>
+            <td>24,461</td>
+            <td>92,737</td>
+            <td>16,123</td>
+            <td>2,032</td>
+            <td><span class="badge success">正常</span></td>
+        </tr>
+        <tr>
+            <td>2026-04-21</td>
+            <td>24,466</td>
+            <td>89,397</td>
+            <td>15,706</td>
+            <td>2,133</td>
+            <td><span class="badge success">正常</span></td>
+        </tr>
                     </tbody>
                 </table>
             </div>
@@ -478,62 +556,65 @@
                             <th>SN 序列号</th>
                             <th style="width:100px;">DAU</th>
                         </tr>
-                    </thead<tr>
-                        <td><span class="badge" style="background:#FFD700;color:#333;">🥇 1</span></td>
-                        <td style="font-family:monospace;font-size:13px;">MLN6DF10026032706654</td>
-                        <td style="font-weight:600;color:var(--alipay-blue);">34</td>
-                    </tr>
-<tr>
-                        <td><span class="badge" style="background:#C0C0C0;color:#333;">🥈 2</span></td>
-                        <td style="font-family:monospace;font-size:13px;">MLN6DF10026032608862</td>
-                        <td style="font-weight:600;color:var(--alipay-blue);">34</td>
-                    </tr>
-<tr>
-                        <td><span class="badge" style="background:#CD7F32;color:#333;">🥉 3</span></td>
-                        <td style="font-family:monospace;font-size:13px;">MLN6DF10026032614004</td>
-                        <td style="font-weight:600;color:var(--alipay-blue);">33</td>
-                    </tr>
-<tr>
-                        <td><span class="badge" style="background:#F0F0F0;color:#333;">4</span></td>
-                        <td style="font-family:monospace;font-size:13px;">MLN6DF11026032703228</td>
-                        <td style="font-weight:600;color:var(--alipay-blue);">32</td>
-                    </tr>
-<tr>
-                        <td><span class="badge" style="background:#F0F0F0;color:#333;">5</span></td>
-                        <td style="font-family:monospace;font-size:13px;">MLN6DF10026032611859</td>
-                        <td style="font-weight:600;color:var(--alipay-blue);">32</td>
-                    </tr>
-<tr>
-                        <td><span class="badge" style="background:#F0F0F0;color:#333;">6</span></td>
-                        <td style="font-family:monospace;font-size:13px;">MLN6DF10026032705619</td>
-                        <td style="font-weight:600;color:var(--alipay-blue);">30</td>
-                    </tr>
-<tr>
-                        <td><span class="badge" style="background:#F0F0F0;color:#333;">7</span></td>
-                        <td style="font-family:monospace;font-size:13px;">MLN6DF10026032604415</td>
-                        <td style="font-weight:600;color:var(--alipay-blue);">28</td>
-                    </tr>
-<tr>
-                        <td><span class="badge" style="background:#F0F0F0;color:#333;">8</span></td>
-                        <td style="font-family:monospace;font-size:13px;">MLN6DF10026032611033</td>
-                        <td style="font-weight:600;color:var(--alipay-blue);">27</td>
-                    </tr>
-<tr>
-                        <td><span class="badge" style="background:#F0F0F0;color:#333;">9</span></td>
-                        <td style="font-family:monospace;font-size:13px;">MLN6DF10026032613745</td>
-                        <td style="font-weight:600;color:var(--alipay-blue);">27</td>
-                    </tr>
-<tr>
-                        <td><span class="badge" style="background:#F0F0F0;color:#333;">10</span></td>
-                        <td style="font-family:monospace;font-size:13px;">MLN6DF11026032702361</td>
-                        <td style="font-weight:600;color:var(--alipay-blue);">27</td>
-                    </tr>
-</table>
+                    </thead>
+                    <tbody>
+        <tr>
+            <td><span class="badge" style="background:#FFD700;color:#333;">🥇 1</span></td>
+            <td style="font-family:monospace;font-size:13px;">MLN6DF10026032706654</td>
+            <td style="font-weight:600;color:var(--alipay-blue);">34</td>
+        </tr>
+        <tr>
+            <td><span class="badge" style="background:#C0C0C0;color:#333;">🥈 2</span></td>
+            <td style="font-family:monospace;font-size:13px;">MLN6DF10026032608862</td>
+            <td style="font-weight:600;color:var(--alipay-blue);">34</td>
+        </tr>
+        <tr>
+            <td><span class="badge" style="background:#CD7F32;color:#333;">🥉 3</span></td>
+            <td style="font-family:monospace;font-size:13px;">MLN6DF10026032614004</td>
+            <td style="font-weight:600;color:var(--alipay-blue);">33</td>
+        </tr>
+        <tr>
+            <td><span class="badge" style="background:#F0F0F0;color:#333;">4</span></td>
+            <td style="font-family:monospace;font-size:13px;">MLN6DF11026032703228</td>
+            <td style="font-weight:600;color:var(--alipay-blue);">32</td>
+        </tr>
+        <tr>
+            <td><span class="badge" style="background:#F0F0F0;color:#333;">5</span></td>
+            <td style="font-family:monospace;font-size:13px;">MLN6DF10026032611859</td>
+            <td style="font-weight:600;color:var(--alipay-blue);">32</td>
+        </tr>
+        <tr>
+            <td><span class="badge" style="background:#F0F0F0;color:#333;">6</span></td>
+            <td style="font-family:monospace;font-size:13px;">MLN6DF10026032705619</td>
+            <td style="font-weight:600;color:var(--alipay-blue);">30</td>
+        </tr>
+        <tr>
+            <td><span class="badge" style="background:#F0F0F0;color:#333;">7</span></td>
+            <td style="font-family:monospace;font-size:13px;">MLN6DF10026032604415</td>
+            <td style="font-weight:600;color:var(--alipay-blue);">28</td>
+        </tr>
+        <tr>
+            <td><span class="badge" style="background:#F0F0F0;color:#333;">8</span></td>
+            <td style="font-family:monospace;font-size:13px;">MLN6DF10026032611033</td>
+            <td style="font-weight:600;color:var(--alipay-blue);">27</td>
+        </tr>
+        <tr>
+            <td><span class="badge" style="background:#F0F0F0;color:#333;">9</span></td>
+            <td style="font-family:monospace;font-size:13px;">MLN6DF10026032613745</td>
+            <td style="font-weight:600;color:var(--alipay-blue);">27</td>
+        </tr>
+        <tr>
+            <td><span class="badge" style="background:#F0F0F0;color:#333;">10</span></td>
+            <td style="font-family:monospace;font-size:13px;">MLN6DF11026032702361</td>
+            <td style="font-weight:600;color:var(--alipay-blue);">27</td>
+        </tr>
+                    </tbody>
+                </table>
             </div>
         </div>
 
         <footer>
-            数据来源：丰巢线圈 DAU 报表&nbsp;&nbsp;·&nbsp;&nbsp; 生成时间:2026-05-07 10:25
+            数据来源：丰巢线圈 DAU 报表&nbsp;&nbsp;·&nbsp;&nbsp; 生成时间:2026-05-07 14:53
         </footer>
     </div>
 
@@ -550,10 +631,10 @@
         new Chart(dauCtx, {
             type: 'line',
             data: {
-                labels: ['04-21', '04-22', '04-23', '04-24', '04-25', '04-26', '04-27', '04-28', '04-29', '04-30', '05-01', '05-02', '05-03', '05-04', '05-05', '05-06'],
+                labels: '04-21', '04-22', '04-23', '04-24', '04-25', '04-26', '04-27', '04-28', '04-29', '04-30', '05-01', '05-02', '05-03', '05-04', '05-05', '05-06',
                 datasets: [{
                     label: 'DAU',
-                    data: [89397, 92737, 92511, 92277, 84621, 85402, 95183, 88658, 91009, 91651, 75880, 71660, 73516, 81759, 90944, 104836],
+                    data: 89397, 92737, 92511, 92277, 84621, 85402, 95183, 88658, 91009, 91651, 75880, 71660, 73516, 81759, 90944, 104836,
                     borderColor: '#1677FF',
                     backgroundColor: gradient,
                     borderWidth: 2.5,
@@ -595,12 +676,9 @@
                         border: { display: false }
                     },
                     y: {
-                        min: 70000,
-                        max: 110000,
                         grid: { color: '#F2F4F7', drawBorder: false },
                         border: { display: false },
                         ticks: {
-                            stepSize: 10000,
                             callback: function(value) {
                                 return (value / 10000).toFixed(0) + '万';
                             }
@@ -614,10 +692,10 @@
         new Chart(deviceCtx, {
             type: 'bar',
             data: {
-                labels: ['04-21', '04-22', '04-23', '04-24', '04-25', '04-26', '04-27', '04-28', '04-29', '04-30', '05-01', '05-02', '05-03', '05-04', '05-05', '05-06'],
+                labels: '04-21', '04-22', '04-23', '04-24', '04-25', '04-26', '04-27', '04-28', '04-29', '04-30', '05-01', '05-02', '05-03', '05-04', '05-05', '05-06',
                 datasets: [{
                     label: '设备数',
-                    data: [24466, 24461, 24462, 24463, 24464, 24466, 24467, 24470, 24472, 24475, 24480, 24480, 24480, 24480, 24480, 24480],
+                    data: [{CHART_DEVICES}],
                     backgroundColor: '#52C41A',
                     borderRadius: 4,
                     barThickness: 32
@@ -638,9 +716,9 @@
         new Chart(statusCtx, {
             type: 'doughnut',
             data: {
-                labels: ['dau≥3 设备', '0<dau<3 设备', '当日 0dau', '近 3 天 0dau', '近 7 天 0dau'],
+                labels: ['dau≥3 设备', '0&lt;dau&lt;3 设备', '当日 0dau', '近 3 天 0dau', '近 7 天 0dau'],
                 datasets: [{
-                    data: [17240, 5444, 1796, 0, 0],
+                    data: [111,244, -88,560, 1,797, {DAU_0_3D}, {DAU_0_7D}],
                     backgroundColor: ['#52C41A', '#1677FF', '#FFC53D', '#FF7875', '#FF4D4F'],
                     borderWidth: 0,
                     cutout: '55%',
