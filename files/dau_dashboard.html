@@ -246,7 +246,7 @@
     <div class="container">
         <header>
             <h1>丰巢线圈 DAU 统计看板</h1>
-            <p>数据周期:04-22 ~ 05-07&nbsp;&nbsp;·&nbsp;&nbsp; 生成时间:2026-05-08 10:45</p>
+            <p>数据周期:04-22 ~ 05-07&nbsp;&nbsp;·&nbsp;&nbsp; 生成时间:2026-05-08 10:53</p>
         </header>
 
         <div class="dashboard">
@@ -269,11 +269,11 @@
             <div class="card">
                 <div class="card-title">异常监控</div>
                 <div class="metric-row">
-                    <span class="value danger">7,969</span>
+                    <span class="value danger">390</span>
                     <span class="label">近 7 天 0dau 设备数</span>
                 </div>
                 <div class="metric-row">
-                    <span class="value danger">3,998</span>
+                    <span class="value danger">596</span>
                     <span class="label">近 3 天 0dau 设备数</span>
                 </div>
                 <div class="metric-row">
@@ -339,8 +339,8 @@
                 <div class="analysis-item warning">
                     <div class="title">异常设备需关注</div>
                     <div class="content">
-                        近 7 天 0dau 设备 <strong>7,969 台</strong>(占比 32.6%),
-                        近 3 天 0dau 设备 <strong>3,998 台</strong>(占比 16.3%)。
+                        近 7 天 0dau 设备 <strong>390 台</strong>(占比 1.6%),
+                        近 3 天 0dau 设备 <strong>596 台</strong>(占比 2.4%)。
                         近 3 天异常设备数接近近 7 天的 2 倍，说明 <strong>部分设备近期才开始不活跃</strong>,
                         建议追踪这批设备的状态变化，排查故障或 offline 原因。
                     </div>
@@ -463,7 +463,7 @@
         </div>
 
         <footer>
-            数据来源：丰巢线圈 DAU 报表&nbsp;&nbsp;·&nbsp;&nbsp; 生成时间:2026-05-08 10:45
+            数据来源：丰巢线圈 DAU 报表&nbsp;&nbsp;·&nbsp;&nbsp; 生成时间:2026-05-08 10:53
         </footer>
     </div>
 
@@ -565,9 +565,9 @@
         new Chart(statusCtx, {
             type: 'doughnut',
             data: {
-                labels: ['dau≥3 设备', '0<dau<3 设备', '当日 0dau'],
+                labels: ['dau≥3 设备', '0&lt;dau&lt;3 设备', '当日 0dau', '近 3 天 0dau', '近 7 天 0dau'],
                 datasets: [{
-                    data: [17193, 5444, 1845],
+                    data: [17,193, 5,444, 1,845, 596, 390],
                     backgroundColor: ['#52C41A', '#1677FF', '#FFC53D', '#FF7875', '#FF4D4F'],
                     borderWidth: 0,
                     cutout: '55%',
