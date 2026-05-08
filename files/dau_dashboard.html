@@ -246,7 +246,7 @@
     <div class="container">
         <header>
             <h1>丰巢线圈 DAU 统计看板</h1>
-            <p>数据周期:04-22 ~ 05-07&nbsp;&nbsp;·&nbsp;&nbsp; 生成时间:2026-05-08 10:37</p>
+            <p>数据周期:04-22 ~ 05-07&nbsp;&nbsp;·&nbsp;&nbsp; 生成时间:2026-05-08 10:45</p>
         </header>
 
         <div class="dashboard">
@@ -463,7 +463,7 @@
         </div>
 
         <footer>
-            数据来源：丰巢线圈 DAU 报表&nbsp;&nbsp;·&nbsp;&nbsp; 生成时间:2026-05-08 10:37
+            数据来源：丰巢线圈 DAU 报表&nbsp;&nbsp;·&nbsp;&nbsp; 生成时间:2026-05-08 10:45
         </footer>
     </div>
 
@@ -565,9 +565,9 @@
         new Chart(statusCtx, {
             type: 'doughnut',
             data: {
-                labels: ['dau≥3 设备', '0&lt;dau&lt;3 设备', '当日 0dau', '近 3 天 0dau', '近 7 天 0dau'],
+                labels: ['dau≥3 设备', '0<dau<3 设备', '当日 0dau'],
                 datasets: [{
-                    data: [17193, 5444, 1845, 3998, 7969],
+                    data: [17193, 5444, 1845],
                     backgroundColor: ['#52C41A', '#1677FF', '#FFC53D', '#FF7875', '#FF4D4F'],
                     borderWidth: 0,
                     cutout: '55%',
