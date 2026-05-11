@@ -72,6 +72,18 @@
         .metric-value.success { color: var(--success); }
         .metric-value.danger { color: var(--danger); }
         .metric-label { font-size: 13px; color: var(--text-secondary); }
+        .card { position: relative; }
+        .metric-mom {
+            position: absolute;
+            bottom: 20px;
+            right: 20px;
+            font-size: 11px;
+            color: var(--text-tertiary);
+        }
+        .metric-mom .up { color: var(--success); font-weight: 500; }
+        .metric-mom .down { color: var(--danger); font-weight: 500; }
+        .metric-mom .stable { color: var(--text-tertiary); }
+
         .metric-row {
             display: flex;
             align-items: baseline;
@@ -209,7 +221,7 @@
     <div class="container">
         <header>
             <h1>丰巢线圈 DAU 统计看板</h1>
-            <p>数据周期:04-25 ~ 05-10&nbsp;&nbsp;·&nbsp;&nbsp; 生成时间:2026-05-11 18:10</p>
+            <p>数据周期:04-25 ~ 05-10&nbsp;&nbsp;·&nbsp;&nbsp; 生成时间:2026-05-11 19:27</p>
         </header>
 
         <div class="dashboard">
@@ -219,6 +231,7 @@
                     <div class="metric-value blue">24,503</div>
                 </div>
                 <div class="metric-label">唯一 SN 总数</div>
+                <div class="metric-mom">→ 持平</div>
             </div>
 
             <div class="card">
@@ -243,6 +256,7 @@
                     <span class="value danger">1,975</span>
                     <span class="label">当日 0dau 设备数</span>
                 </div>
+                <div class="metric-mom">→ 监控中</div>
             </div>
 
             <div class="card">
@@ -289,7 +303,7 @@
                 <div class="analysis-item info">
                     <div class="title">设备规模</div>
                     <div class="content">
-                        每日设备数在 <strong>24,464~24,503</strong> 之间。
+                        每日设备数在 <strong>24,464~24,503</strong> 之间波动。
                         总设备数 24,503 台为 20 天去重后的唯一 SN 数。
                     </div>
                 </div>
@@ -397,7 +411,7 @@
         </div>
 
         <footer>
-            数据来源：丰巢线圈 DAU 报表&nbsp;&nbsp;·&nbsp;&nbsp; 生成时间:2026-05-11 18:10
+            数据来源：丰巢线圈 DAU 报表&nbsp;&nbsp;·&nbsp;&nbsp; 生成时间:2026-05-11 19:27
         </footer>
     </div>
 

@@ -72,6 +72,18 @@
         .metric-value.success { color: var(--success); }
         .metric-value.danger { color: var(--danger); }
         .metric-label { font-size: 13px; color: var(--text-secondary); }
+        .card { position: relative; }
+        .metric-mom {
+            position: absolute;
+            bottom: 20px;
+            right: 20px;
+            font-size: 11px;
+            color: var(--text-tertiary);
+        }
+        .metric-mom .up { color: var(--success); font-weight: 500; }
+        .metric-mom .down { color: var(--danger); font-weight: 500; }
+        .metric-mom .stable { color: var(--text-tertiary); }
+
         .metric-row {
             display: flex;
             align-items: baseline;
@@ -219,6 +231,7 @@
                     <div class="metric-value blue">{TOTAL_SN}</div>
                 </div>
                 <div class="metric-label">唯一 SN 总数</div>
+                <div class="metric-mom">{SN_MOM}</div>
             </div>
 
             <div class="card">
@@ -243,6 +256,7 @@
                     <span class="value danger">{DAU_0_DAY}</span>
                     <span class="label">当日 0dau 设备数</span>
                 </div>
+                <div class="metric-mom">{ZERO_MOM}</div>
             </div>
 
             <div class="card">
