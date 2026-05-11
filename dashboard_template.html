@@ -262,11 +262,11 @@
             <h3>📊 数据分析洞察</h3>
             <div class="analysis-grid">
                 <div class="analysis-item positive">
-                    <div class="title">整体趋势稳定</div>
+                    <div class="title">整体趋势</div>
                     <div class="content">
                         {DAY_COUNT} 天 DAU 均值 <strong>{AVG_DAU}</strong>，波动范围 {MIN_DAU}~{PEAK_DAU}。
-                        {PEAK_DATE} 达到峰值 {PEAK_DAU}，25-26 日略有回落 (周中波动)。
-                        最新日 {LATEST_DATE} DAU {LATEST_DAU}，较峰值下降 {PEAK_DROP}%，属正常波动。
+                        {PEAK_DATE} 达到峰值 {PEAK_DAU}。
+                        最新日 {LATEST_DATE} DAU {LATEST_DAU}，较峰值下降 {PEAK_DROP}%。
                     </div>
                 </div>
                 <div class="analysis-item warning">
@@ -274,8 +274,7 @@
                     <div class="content">
                         近 7 天 0dau 设备 <strong>{DAU_0_7D} 台</strong>(占比 {DAU_0_7D_PCT}%),
                         近 3 天 0dau 设备 <strong>{DAU_0_3D} 台</strong>(占比 {DAU_0_3D_PCT}%)。
-                        近 3 天异常设备数接近近 7 天的 2 倍，说明 <strong>部分设备近期才开始不活跃</strong>,
-                        建议追踪这批设备的状态变化，排查故障或 offline 原因。
+                        {ANOMALY_DESC}
                     </div>
                 </div>
                 <div class="analysis-item info">
@@ -284,15 +283,14 @@
                         dau≥3 的设备 <strong>{DAU_GE3} 台</strong>(占比 {DAU_GE3_PCT}%),
                         0&lt;dau&lt;3 的设备 <strong>{DAU_MID} 台</strong>(占比 {DAU_MID_PCT}%),
                         dau=0 的设备 <strong>{DAU_0_DAY} 台</strong>(占比 {DAU_0_DAY_PCT}%)。
-                        整体呈健康分布，活跃设备占比超 6 成。
+                        {ACTIVITY_SUMMARY}
                     </div>
                 </div>
                 <div class="analysis-item info">
-                    <div class="title">设备规模稳定</div>
+                    <div class="title">设备规模</div>
                     <div class="content">
-                        每日设备数稳定在 <strong>{MIN_DEVICES}~{MAX_DEVICES}</strong> 之间，
-                        波动幅度&lt;0.04%,说明设备基数非常稳定，
-                        无大规模新增或流失。总设备数 {TOTAL_SN} 台为 {DAY_COUNT} 天去重后的唯一 SN 数。
+                        {DEVICE_STABILITY}
+                        总设备数 {TOTAL_SN} 台为 {DAY_COUNT} 天去重后的唯一 SN 数。
                     </div>
                 </div>
             </div>
