@@ -159,12 +159,7 @@ replacements = {
     '{MIN_DEVICES}': f"{min(device_array):,}",
     '{MAX_DEVICES}': f"{max(device_array):,}",
     '{PEAK_DAU}': f"{max(dau_array):,}",
-    
-    # 环比占位符（稍后填充）
-    '{SN_MOM}': '计算中...',
-    '{DAU_MOM}': '计算中...',
-    '{ZERO_MOM}': '计算中...',
-    '{GE3_MOM}': '计算中...',
+
 }
 
 # 周环比计算（和7天前对比）
