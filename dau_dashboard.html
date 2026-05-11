@@ -246,7 +246,7 @@
     <div class="container">
         <header>
             <h1>丰巢线圈 DAU 统计看板</h1>
-            <p>数据周期:04-25 ~ 05-10&nbsp;&nbsp;·&nbsp;&nbsp; 生成时间:2026-05-11 11:08</p>
+            <p>数据周期:04-25 ~ 05-10&nbsp;&nbsp;·&nbsp;&nbsp; 生成时间:2026-05-11 17:25</p>
         </header>
 
         <div class="dashboard">
@@ -269,11 +269,11 @@
             <div class="card">
                 <div class="card-title">异常监控</div>
                 <div class="metric-row">
-                    <span class="value danger">387</span>
+                    <span class="value danger">0</span>
                     <span class="label">近 7 天 0dau 设备数</span>
                 </div>
                 <div class="metric-row">
-                    <span class="value danger">613</span>
+                    <span class="value danger">0</span>
                     <span class="label">近 3 天 0dau 设备数</span>
                 </div>
                 <div class="metric-row">
@@ -294,13 +294,6 @@
                 </div>
             </div>
         </div>
-
-        <div class="definition-section">
-            <h3>📖 数据口径说明</h3>
-            <div class="definition-grid">
-                <div class="definition-item">
-                    <div class="term">总设备数</div>
-                    <div class="desc">统计周期内出现过的唯一 SN 数量，一个 SN 代表一台设备。数据来源：排除表格中 SN="all" 汇总行后的去重计数。</div>
                 </div>
                 <div class="definition-item">
                     <div class="term">DAU</div>
@@ -339,8 +332,8 @@
                 <div class="analysis-item warning">
                     <div class="title">异常设备需关注</div>
                     <div class="content">
-                        近 7 天 0dau 设备 <strong>387 台</strong>(占比 1.6%),
-                        近 3 天 0dau 设备 <strong>613 台</strong>(占比 2.5%)。
+                        近 7 天 0dau 设备 <strong>0 台</strong>(占比 {DAU_0_7D_PCT}%),
+                        近 3 天 0dau 设备 <strong>0 台</strong>(占比 {DAU_0_3D_PCT}%)。
                         近 3 天异常设备数接近近 7 天的 2 倍，说明 <strong>部分设备近期才开始不活跃</strong>,
                         建议追踪这批设备的状态变化，排查故障或 offline 原因。
                     </div>
@@ -411,26 +404,7 @@
                         </tr>
                     </thead>
                     <tbody>
-<tr><td>2026-05-10</td><td>24,503</td><td>104,750</td><td>16,989</td><td>1,975</td><td><span class="badge success">正常</span></td></tr>
-<tr><td>2026-05-09</td><td>24,503</td><td>112,167</td><td>17,971</td><td>1,620</td><td><span class="badge success">正常</span></td></tr>
-<tr><td>2026-05-08</td><td>24,493</td><td>110,866</td><td>17,849</td><td>1,692</td><td><span class="badge success">正常</span></td></tr>
-<tr><td>2026-05-07</td><td>24,482</td><td>103,644</td><td>17,193</td><td>1,845</td><td><span class="badge success">正常</span></td></tr>
-<tr><td>2026-05-06</td><td>24,480</td><td>104,836</td><td>17,240</td><td>1,796</td><td><span class="badge success">正常</span></td></tr>
-<tr><td>2026-05-05</td><td>24,480</td><td>90,944</td><td>15,819</td><td>2,316</td><td><span class="badge success">正常</span></td></tr>
-<tr><td>2026-05-04</td><td>24,480</td><td>81,759</td><td>14,700</td><td>2,671</td><td><span class="badge warning">偏低</span></td></tr>
-<tr><td>2026-05-03</td><td>24,480</td><td>73,516</td><td>13,509</td><td>3,155</td><td><span class="badge warning">偏低</span></td></tr>
-<tr><td>2026-05-02</td><td>24,480</td><td>71,660</td><td>13,276</td><td>3,257</td><td><span class="badge warning">偏低</span></td></tr>
-<tr><td>2026-05-01</td><td>24,480</td><td>75,880</td><td>13,796</td><td>2,998</td><td><span class="badge warning">偏低</span></td></tr>
-<tr><td>2026-04-30</td><td>24,475</td><td>91,651</td><td>16,092</td><td>1,975</td><td><span class="badge success">正常</span></td></tr>
-<tr><td>2026-04-29</td><td>24,472</td><td>91,009</td><td>15,875</td><td>2,099</td><td><span class="badge success">正常</span></td></tr>
-<tr><td>2026-04-28</td><td>24,470</td><td>88,658</td><td>15,498</td><td>2,208</td><td><span class="badge success">正常</span></td></tr>
-<tr><td>2026-04-27</td><td>24,467</td><td>95,183</td><td>16,305</td><td>1,964</td><td><span class="badge success">正常</span></td></tr>
-<tr><td>2026-04-26</td><td>24,466</td><td>85,402</td><td>14,870</td><td>2,551</td><td><span class="badge success">正常</span></td></tr>
-<tr><td>2026-04-25</td><td>24,464</td><td>84,621</td><td>14,919</td><td>2,473</td><td><span class="badge warning">偏低</span></td></tr>
-<tr><td>2026-04-24</td><td>24,463</td><td>92,277</td><td>16,083</td><td>2,023</td><td><span class="badge success">正常</span></td></tr>
-<tr><td>2026-04-23</td><td>24,462</td><td>92,511</td><td>15,993</td><td>2,062</td><td><span class="badge success">正常</span></td></tr>
-<tr><td>2026-04-22</td><td>24,461</td><td>92,737</td><td>16,123</td><td>2,032</td><td><span class="badge success">正常</span></td></tr>
-<tr><td>2026-04-21</td><td>24,466</td><td>89,397</td><td>15,706</td><td>2,133</td><td><span class="badge success">正常</span></td></tr>
+{TABLE_ROWS}
                     </tbody>
                 </table>
             </div>
@@ -450,23 +424,14 @@
                         </tr>
                     </thead>
                     <tbody>
-<tr><td><span class="badge" style="background:#FFD700;color:#333;">🥇 1</span></td><td style="font-family:monospace;font-size:13px;">MLN6DF11026032709157</td><td style="font-weight:600;color:var(--alipay-blue);">38</td></tr>
-<tr><td><span class="badge" style="background:#C0C0C0;color:#333;">🥈 2</span></td><td style="font-family:monospace;font-size:13px;">MLN6DF10026032706654</td><td style="font-weight:600;color:var(--alipay-blue);">35</td></tr>
-<tr><td><span class="badge" style="background:#CD7F32;color:#333;">🥉 3</span></td><td style="font-family:monospace;font-size:13px;">MLN6DF10026032611033</td><td style="font-weight:600;color:var(--alipay-blue);">32</td></tr>
-<tr><td><span class="badge" style="background:#F0F0F0;color:#333;">4</span></td><td style="font-family:monospace;font-size:13px;">MLN6DF11026032702361</td><td style="font-weight:600;color:var(--alipay-blue);">31</td></tr>
-<tr><td><span class="badge" style="background:#F0F0F0;color:#333;">5</span></td><td style="font-family:monospace;font-size:13px;">MLN6DF10026032703725</td><td style="font-weight:600;color:var(--alipay-blue);">31</td></tr>
-<tr><td><span class="badge" style="background:#F0F0F0;color:#333;">6</span></td><td style="font-family:monospace;font-size:13px;">MLN6DF11026032702643</td><td style="font-weight:600;color:var(--alipay-blue);">30</td></tr>
-<tr><td><span class="badge" style="background:#F0F0F0;color:#333;">7</span></td><td style="font-family:monospace;font-size:13px;">MLN6DF11026032708931</td><td style="font-weight:600;color:var(--alipay-blue);">30</td></tr>
-<tr><td><span class="badge" style="background:#F0F0F0;color:#333;">8</span></td><td style="font-family:monospace;font-size:13px;">MLN6DF10026032613460</td><td style="font-weight:600;color:var(--alipay-blue);">29</td></tr>
-<tr><td><span class="badge" style="background:#F0F0F0;color:#333;">9</span></td><td style="font-family:monospace;font-size:13px;">MLN6DF11026032707134</td><td style="font-weight:600;color:var(--alipay-blue);">28</td></tr>
-<tr><td><span class="badge" style="background:#F0F0F0;color:#333;">10</span></td><td style="font-family:monospace;font-size:13px;">MLN6DF10026032602887</td><td style="font-weight:600;color:var(--alipay-blue);">28</td></tr>
+{TOP10_ROWS}
                     </tbody>
                 </table>
             </div>
         </div>
 
         <footer>
-            数据来源：丰巢线圈 DAU 报表&nbsp;&nbsp;·&nbsp;&nbsp; 生成时间:2026-05-11 11:08
+            数据来源：丰巢线圈 DAU 报表&nbsp;&nbsp;·&nbsp;&nbsp; 生成时间:2026-05-11 17:25
         </footer>
     </div>
 
@@ -483,10 +448,10 @@
         new Chart(dauCtx, {
             type: 'line',
             data: {
-                labels: ['04-25', '04-26', '04-27', '04-28', '04-29', '04-30', '05-01', '05-02', '05-03', '05-04', '05-05', '05-06', '05-07', '05-08', '05-09', '05-10'],
+                labels: [{CHART_DATES}],
                 datasets: [{
                     label: 'DAU',
-                    data: [84621, 85402, 95183, 88658, 91009, 91651, 75880, 71660, 73516, 81759, 90944, 104836, 103644, 110866, 112167, 104750],
+                    data: [{CHART_DAU}],
                     borderColor: '#1677FF',
                     backgroundColor: gradient,
                     borderWidth: 2.5,
@@ -547,10 +512,10 @@
         new Chart(deviceCtx, {
             type: 'bar',
             data: {
-                labels: ['04-25', '04-26', '04-27', '04-28', '04-29', '04-30', '05-01', '05-02', '05-03', '05-04', '05-05', '05-06', '05-07', '05-08', '05-09', '05-10'],
+                labels: [{CHART_DATES}],
                 datasets: [{
                     label: '设备数',
-                    data: [24464, 24466, 24467, 24470, 24472, 24475, 24480, 24480, 24480, 24480, 24480, 24480, 24482, 24493, 24503, 24503],
+                    data: [{CHART_DEVICES}],
                     backgroundColor: '#52C41A',
                     borderRadius: 4,
                     barThickness: 32
@@ -573,7 +538,7 @@
             data: {
                 labels: ['dau≥3 设备', '0<dau<3 设备', '当日 0dau'],
                 datasets: [{
-                    data: [16989, 5539, 1975],
+                    data: [16,989, 5,539, 1,975, 0, 0],
                     backgroundColor: ['#52C41A', '#1677FF', '#FFC53D', '#FF7875', '#FF4D4F'],
                     borderWidth: 0,
                     cutout: '55%',
