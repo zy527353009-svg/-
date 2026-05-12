@@ -72,6 +72,8 @@
         .metric-value.success { color: var(--success); }
         .metric-value.danger { color: var(--danger); }
         .metric-label { font-size: 13px; color: var(--text-secondary); }
+        .card { position: relative; }
+
         .metric-row {
             display: flex;
             align-items: baseline;
@@ -209,14 +211,14 @@
     <div class="container">
         <header>
             <h1>丰巢线圈 DAU 统计看板</h1>
-            <p>数据周期:04-25 ~ 05-10&nbsp;&nbsp;·&nbsp;&nbsp; 生成时间:2026-05-11 17:40</p>
+            <p>数据周期:04-25 ~ 05-10&nbsp;&nbsp;·&nbsp;&nbsp; 生成时间:2026-05-12 10:18</p>
         </header>
 
         <div class="dashboard">
             <div class="card">
                 <div class="card-title">总设备数</div>
                 <div class="metric-main">
-                    <div class="metric-value blue">24,503</div>
+                    <div class="metric-value blue">24,505</div>
                 </div>
                 <div class="metric-label">唯一 SN 总数</div>
             </div>
@@ -224,23 +226,23 @@
             <div class="card">
                 <div class="card-title">最新 DAU</div>
                 <div class="metric-main">
-                    <div class="metric-value success">104,750</div>
+                    <div class="metric-value success">118,360</div>
                 </div>
-                <div class="metric-label">2026-05-10 &nbsp;&nbsp;·&nbsp;&nbsp; dau≥3 设备：16,989 台</div>
+                <div class="metric-label">2026-05-10 &nbsp;&nbsp;·&nbsp;&nbsp; dau≥3 设备：18,334 台</div>
             </div>
 
             <div class="card">
                 <div class="card-title">异常监控</div>
                 <div class="metric-row">
-                    <span class="value danger">387</span>
+                    <span class="value danger">378</span>
                     <span class="label">近 7 天 0dau 设备数</span>
                 </div>
                 <div class="metric-row">
-                    <span class="value danger">613</span>
+                    <span class="value danger">596</span>
                     <span class="label">近 3 天 0dau 设备数</span>
                 </div>
                 <div class="metric-row">
-                    <span class="value danger">1,975</span>
+                    <span class="value danger">1,552</span>
                     <span class="label">当日 0dau 设备数</span>
                 </div>
             </div>
@@ -248,11 +250,11 @@
             <div class="card">
                 <div class="card-title">活跃分布</div>
                 <div class="metric-row">
-                    <span class="value blue">16,989</span>
+                    <span class="value blue">18,334</span>
                     <span class="label">dau ≥ 3 设备数</span>
                 </div>
                 <div class="metric-row">
-                    <span class="value">5,539</span>
+                    <span class="value">4,619</span>
                     <span class="label">0&lt;dau&lt;3 设备数</span>
                 </div>
             </div>
@@ -262,37 +264,35 @@
             <h3>📊 数据分析洞察</h3>
             <div class="analysis-grid">
                 <div class="analysis-item positive">
-                    <div class="title">整体趋势稳定</div>
+                    <div class="title">整体趋势</div>
                     <div class="content">
                         20 天 DAU 均值 <strong>91,659</strong>，波动范围 71,660~112,167。
-                        05-09 达到峰值 112,167，25-26 日略有回落 (周中波动)。
-                        最新日 2026-05-10 DAU 104,750，较峰值下降 40,507%，属正常波动。
+                        05-09 达到峰值 112,167。
+                        最新日 2026-05-10 DAU 118,360，较峰值下降 40,507%。
                     </div>
                 </div>
                 <div class="analysis-item warning">
                     <div class="title">异常设备需关注</div>
                     <div class="content">
-                        近 7 天 0dau 设备 <strong>387 台</strong>(占比 1.6%),
-                        近 3 天 0dau 设备 <strong>613 台</strong>(占比 2.5%)。
-                        近 3 天异常设备数接近近 7 天的 2 倍，说明 <strong>部分设备近期才开始不活跃</strong>,
-                        建议追踪这批设备的状态变化，排查故障或 offline 原因。
+                        近 7 天 0dau 设备 <strong>378 台</strong>(占比 1.5%),
+                        近 3 天 0dau 设备 <strong>596 台</strong>(占比 2.4%)。
+                        近 3 天异常设备数是近 7 天的1.6倍，说明<strong>部分设备近期才开始不活跃</strong>。
                     </div>
                 </div>
                 <div class="analysis-item info">
                     <div class="title">活跃度结构分析</div>
                     <div class="content">
-                        dau≥3 的设备 <strong>16,989 台</strong>(占比 69.3%),
-                        0&lt;dau&lt;3 的设备 <strong>5,539 台</strong>(占比 22.6%),
-                        dau=0 的设备 <strong>1,975 台</strong>(占比 8.1%)。
-                        整体呈健康分布，活跃设备占比超 6 成。
+                        dau≥3 的设备 <strong>18,334 台</strong>(占比 74.8%),
+                        0&lt;dau&lt;3 的设备 <strong>4,619 台</strong>(占比 18.8%),
+                        dau=0 的设备 <strong>1,552 台</strong>(占比 6.3%)。
+                        活跃设备占比74.8%，<strong>整体活跃度健康</strong>。
                     </div>
                 </div>
                 <div class="analysis-item info">
-                    <div class="title">设备规模稳定</div>
+                    <div class="title">设备规模</div>
                     <div class="content">
-                        每日设备数稳定在 <strong>24,464~24,503</strong> 之间，
-                        波动幅度&lt;0.04%,说明设备基数非常稳定，
-                        无大规模新增或流失。总设备数 24,503 台为 20 天去重后的唯一 SN 数。
+                        每日设备数在 <strong>24,464~24,503</strong> 之间波动。
+                        总设备数 24,505 台为 20 天去重后的唯一 SN 数。
                     </div>
                 </div>
             </div>
@@ -383,23 +383,23 @@
                         </tr>
                     </thead>
                     <tbody>
-<tr><td><span class="badge" style="background:#FFD700;color:#333;">🥇 1</span></td><td style="font-family:monospace;font-size:13px;">MLN6DF11026032709157</td><td style="font-weight:600;color:var(--alipay-blue);">38</td></tr>
-<tr><td><span class="badge" style="background:#C0C0C0;color:#333;">🥈 2</span></td><td style="font-family:monospace;font-size:13px;">MLN6DF10026032706654</td><td style="font-weight:600;color:var(--alipay-blue);">35</td></tr>
-<tr><td><span class="badge" style="background:#CD7F32;color:#333;">🥉 3</span></td><td style="font-family:monospace;font-size:13px;">MLN6DF10026032611033</td><td style="font-weight:600;color:var(--alipay-blue);">32</td></tr>
-<tr><td><span class="badge" style="background:#F0F0F0;color:#333;">4</span></td><td style="font-family:monospace;font-size:13px;">MLN6DF11026032702361</td><td style="font-weight:600;color:var(--alipay-blue);">31</td></tr>
-<tr><td><span class="badge" style="background:#F0F0F0;color:#333;">5</span></td><td style="font-family:monospace;font-size:13px;">MLN6DF10026032703725</td><td style="font-weight:600;color:var(--alipay-blue);">31</td></tr>
-<tr><td><span class="badge" style="background:#F0F0F0;color:#333;">6</span></td><td style="font-family:monospace;font-size:13px;">MLN6DF11026032702643</td><td style="font-weight:600;color:var(--alipay-blue);">30</td></tr>
-<tr><td><span class="badge" style="background:#F0F0F0;color:#333;">7</span></td><td style="font-family:monospace;font-size:13px;">MLN6DF11026032708931</td><td style="font-weight:600;color:var(--alipay-blue);">30</td></tr>
-<tr><td><span class="badge" style="background:#F0F0F0;color:#333;">8</span></td><td style="font-family:monospace;font-size:13px;">MLN6DF10026032613460</td><td style="font-weight:600;color:var(--alipay-blue);">29</td></tr>
-<tr><td><span class="badge" style="background:#F0F0F0;color:#333;">9</span></td><td style="font-family:monospace;font-size:13px;">MLN6DF11026032707134</td><td style="font-weight:600;color:var(--alipay-blue);">28</td></tr>
-<tr><td><span class="badge" style="background:#F0F0F0;color:#333;">10</span></td><td style="font-family:monospace;font-size:13px;">MLN6DF10026032602887</td><td style="font-weight:600;color:var(--alipay-blue);">28</td></tr>
+<tr><td><span class="badge" style="background:#FFD700;color:#333;">🥇 1</span></td><td style="font-family:monospace;font-size:13px;">MLN6DF10026032614004</td><td style="font-weight:600;color:var(--alipay-blue);">47</td></tr>
+<tr><td><span class="badge" style="background:#C0C0C0;color:#333;">🥈 2</span></td><td style="font-family:monospace;font-size:13px;">MLN6DF10026032608862</td><td style="font-weight:600;color:var(--alipay-blue);">46</td></tr>
+<tr><td><span class="badge" style="background:#CD7F32;color:#333;">🥉 3</span></td><td style="font-family:monospace;font-size:13px;">MLN6DF10026032608960</td><td style="font-weight:600;color:var(--alipay-blue);">45</td></tr>
+<tr><td><span class="badge" style="background:#F0F0F0;color:#333;">4</span></td><td style="font-family:monospace;font-size:13px;">MLN6DF10026032611859</td><td style="font-weight:600;color:var(--alipay-blue);">40</td></tr>
+<tr><td><span class="badge" style="background:#F0F0F0;color:#333;">5</span></td><td style="font-family:monospace;font-size:13px;">MLN6DF10026032611310</td><td style="font-weight:600;color:var(--alipay-blue);">40</td></tr>
+<tr><td><span class="badge" style="background:#F0F0F0;color:#333;">6</span></td><td style="font-family:monospace;font-size:13px;">MLN6DF11026032702361</td><td style="font-weight:600;color:var(--alipay-blue);">39</td></tr>
+<tr><td><span class="badge" style="background:#F0F0F0;color:#333;">7</span></td><td style="font-family:monospace;font-size:13px;">MLN6DF10026032614518</td><td style="font-weight:600;color:var(--alipay-blue);">38</td></tr>
+<tr><td><span class="badge" style="background:#F0F0F0;color:#333;">8</span></td><td style="font-family:monospace;font-size:13px;">MLN6DF10026032703725</td><td style="font-weight:600;color:var(--alipay-blue);">38</td></tr>
+<tr><td><span class="badge" style="background:#F0F0F0;color:#333;">9</span></td><td style="font-family:monospace;font-size:13px;">MLN6DF11026032700559</td><td style="font-weight:600;color:var(--alipay-blue);">36</td></tr>
+<tr><td><span class="badge" style="background:#F0F0F0;color:#333;">10</span></td><td style="font-family:monospace;font-size:13px;">MLN6DF11026032707134</td><td style="font-weight:600;color:var(--alipay-blue);">34</td></tr>
                     </tbody>
                 </table>
             </div>
         </div>
 
         <footer>
-            数据来源：丰巢线圈 DAU 报表&nbsp;&nbsp;·&nbsp;&nbsp; 生成时间:2026-05-11 17:40
+            数据来源：丰巢线圈 DAU 报表&nbsp;&nbsp;·&nbsp;&nbsp; 生成时间:2026-05-12 10:18
         </footer>
     </div>
 
@@ -506,7 +506,7 @@
             data: {
                 labels: ['dau≥3 设备', '0<dau<3 设备', '当日 0dau'],
                 datasets: [{
-                    data: [16989, 5539, 1975],
+                    data: [18334, 4619, 1552],
                     backgroundColor: ['#52C41A', '#1677FF', '#FFC53D'],
                     borderWidth: 0,
                     cutout: '55%',
