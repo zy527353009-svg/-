@@ -217,6 +217,17 @@ if dev_fluct < 0.1:
 else:
     replacements['{DEVICE_STABILITY}'] = f'每日设备数在 <strong>{min_dev:,}~{max_dev:,}</strong> 之间波动。'
 
+# 加载 7 天高活跃设备数据
+import json
+try:
+    with open('files/high_active_7d.json', 'r', encoding='utf-8') as f:
+        high_active_data = json.load(f)
+    replacements['{HIGH_ACTIVE_7D_ROWS}'] = high_active_data.get('table_html', '<tr><td colspan="3" style="text-align:center;">暂无数据</td></tr>')
+    replacements['{HIGH_ACTIVE_COUNT}'] = str(high_active_data.get('count', 0))
+except:
+    replacements['{HIGH_ACTIVE_7D_ROWS}'] = '<tr><td colspan="3" style="text-align:center;">暂无数据</td></tr>'
+    replacements['{HIGH_ACTIVE_COUNT}'] = '0'
+
 for key, value in replacements.items():
     html = html.replace(key, value)
 

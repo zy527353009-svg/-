@@ -370,6 +370,29 @@
             </div>
         </div>
 
+        <div class="chart-section">
+            <div class="section-header">
+                <h2 class="section-title">🔥 7 天累计高活跃设备 (DAU>200)</h2>
+            </div>
+            <div class="table-container">
+                <table>
+                    <thead>
+                        <tr>
+                            <th style="width:80px;">排名</th>
+                            <th>SN 序列号</th>
+                            <th style="width:120px;">7 天累计 DAU</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+{HIGH_ACTIVE_7D_ROWS}
+                    </tbody>
+                </table>
+            </div>
+            <p style="margin-top:12px;font-size:13px;color:var(--text-tertiary);">
+                统计说明：连续 7 天在架且累计 DAU>200 的设备，共 <strong>{HIGH_ACTIVE_COUNT} 台</strong>
+            </p>
+        </div>
+
         <footer>
             数据来源：丰巢线圈 DAU 报表&nbsp;&nbsp;·&nbsp;&nbsp; 生成时间:{TIME}
         </footer>
