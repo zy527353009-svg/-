@@ -211,7 +211,7 @@
     <div class="container">
         <header>
             <h1>丰巢线圈 DAU 统计看板</h1>
-            <p>数据周期:04-25 ~ 05-10&nbsp;&nbsp;·&nbsp;&nbsp; 生成时间:2026-05-12 10:18</p>
+            <p>数据周期:04-26 ~ 05-11&nbsp;&nbsp;·&nbsp;&nbsp; 生成时间:2026-05-12 10:21</p>
         </header>
 
         <div class="dashboard">
@@ -228,7 +228,7 @@
                 <div class="metric-main">
                     <div class="metric-value success">118,360</div>
                 </div>
-                <div class="metric-label">2026-05-10 &nbsp;&nbsp;·&nbsp;&nbsp; dau≥3 设备：18,334 台</div>
+                <div class="metric-label">2026-05-11 &nbsp;&nbsp;·&nbsp;&nbsp; dau≥3 设备：18,334 台</div>
             </div>
 
             <div class="card">
@@ -266,9 +266,9 @@
                 <div class="analysis-item positive">
                     <div class="title">整体趋势</div>
                     <div class="content">
-                        20 天 DAU 均值 <strong>91,659</strong>，波动范围 71,660~112,167。
-                        05-09 达到峰值 112,167。
-                        最新日 2026-05-10 DAU 118,360，较峰值下降 40,507%。
+                        21 天 DAU 均值 <strong>93,767</strong>，波动范围 71,660~118,360。
+                        05-11 达到峰值 118,360。
+                        最新日 2026-05-11 DAU 118,360，较峰值下降 46,700%。
                     </div>
                 </div>
                 <div class="analysis-item warning">
@@ -291,8 +291,8 @@
                 <div class="analysis-item info">
                     <div class="title">设备规模</div>
                     <div class="content">
-                        每日设备数在 <strong>24,464~24,503</strong> 之间波动。
-                        总设备数 24,505 台为 20 天去重后的唯一 SN 数。
+                        每日设备数在 <strong>24,466~24,505</strong> 之间波动。
+                        总设备数 24,505 台为 21 天去重后的唯一 SN 数。
                     </div>
                 </div>
             </div>
@@ -310,7 +310,7 @@
             
             <div class="chart-section">
                 <div class="section-header">
-                    <h2 class="section-title">设备状态分布 (2026-05-10)</h2>
+                    <h2 class="section-title">设备状态分布 (2026-05-11)</h2>
                 </div>
                 <div class="chart-wrapper">
                     <canvas id="statusChart"></canvas>
@@ -344,6 +344,7 @@
                         </tr>
                     </thead>
                     <tbody>
+<tr><td>2026-05-11</td><td>24,505</td><td>118,360</td><td>18,334</td><td>1,552</td><td><span class="badge success">正常</span></td></tr>
 <tr><td>2026-05-10</td><td>24,503</td><td>104,750</td><td>16,989</td><td>1,975</td><td><span class="badge success">正常</span></td></tr>
 <tr><td>2026-05-09</td><td>24,503</td><td>112,167</td><td>17,971</td><td>1,620</td><td><span class="badge success">正常</span></td></tr>
 <tr><td>2026-05-08</td><td>24,493</td><td>110,866</td><td>17,849</td><td>1,692</td><td><span class="badge success">正常</span></td></tr>
@@ -371,7 +372,7 @@
 
         <div class="chart-section">
             <div class="section-header">
-                <h2 class="section-title">🏆 当日 DAU Top10 设备 (2026-05-10)</h2>
+                <h2 class="section-title">🏆 当日 DAU Top10 设备 (2026-05-11)</h2>
             </div>
             <div class="table-container">
                 <table>
@@ -399,7 +400,7 @@
         </div>
 
         <footer>
-            数据来源：丰巢线圈 DAU 报表&nbsp;&nbsp;·&nbsp;&nbsp; 生成时间:2026-05-12 10:18
+            数据来源：丰巢线圈 DAU 报表&nbsp;&nbsp;·&nbsp;&nbsp; 生成时间:2026-05-12 10:21
         </footer>
     </div>
 
@@ -416,10 +417,10 @@
         new Chart(dauCtx, {
             type: 'line',
             data: {
-                labels: ['04-25', '04-26', '04-27', '04-28', '04-29', '04-30', '05-01', '05-02', '05-03', '05-04', '05-05', '05-06', '05-07', '05-08', '05-09', '05-10'],
+                labels: ['04-26', '04-27', '04-28', '04-29', '04-30', '05-01', '05-02', '05-03', '05-04', '05-05', '05-06', '05-07', '05-08', '05-09', '05-10', '05-11'],
                 datasets: [{
                     label: 'DAU',
-                    data: [84621, 85402, 95183, 88658, 91009, 91651, 75880, 71660, 73516, 81759, 90944, 104836, 103644, 110866, 112167, 104750],
+                    data: [85402, 95183, 88658, 91009, 91651, 75880, 71660, 73516, 81759, 90944, 104836, 103644, 110866, 112167, 104750, 118360],
                     borderColor: '#1677FF',
                     backgroundColor: gradient,
                     borderWidth: 2.5,
@@ -480,10 +481,10 @@
         new Chart(deviceCtx, {
             type: 'bar',
             data: {
-                labels: ['04-25', '04-26', '04-27', '04-28', '04-29', '04-30', '05-01', '05-02', '05-03', '05-04', '05-05', '05-06', '05-07', '05-08', '05-09', '05-10'],
+                labels: ['04-26', '04-27', '04-28', '04-29', '04-30', '05-01', '05-02', '05-03', '05-04', '05-05', '05-06', '05-07', '05-08', '05-09', '05-10', '05-11'],
                 datasets: [{
                     label: '设备数',
-                    data: [24464, 24466, 24467, 24470, 24472, 24475, 24480, 24480, 24480, 24480, 24480, 24480, 24482, 24493, 24503, 24503],
+                    data: [24466, 24467, 24470, 24472, 24475, 24480, 24480, 24480, 24480, 24480, 24480, 24482, 24493, 24503, 24503, 24505],
                     backgroundColor: '#52C41A',
                     borderRadius: 4,
                     barThickness: 32
